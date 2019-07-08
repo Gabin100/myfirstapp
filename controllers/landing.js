@@ -18,3 +18,16 @@ exports.get_landing = function(req, res, next) {
     })
     
   };
+
+  exports.show_lead = function(req, res, next) {
+    models.lead.findOne({
+      where:{
+        id: req.params.lead_id
+      }
+    }).then(lead => {
+      res.render('lead', {
+        lead: lead
+      });
+    })
+    
+  };
