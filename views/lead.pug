@@ -5,6 +5,7 @@ block content
   p 
     span #{lead.email}
     |
+    em 
     a(href="/lead/" + lead.id + "/edit") Edit
     |
     form(action="/lead/" + lead.id + "/delete", method="post")
