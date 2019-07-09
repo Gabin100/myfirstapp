@@ -3,25 +3,41 @@ html(lang='en')
   include common/head.pug 
   +head(`${title}`)
   body
-    block content
-      h1= title
-      p Welcome to #{title}
-        form(action="/", method="POST")
-          input(type="email", name="lead_email",placeholder="Enter your E-mail" )
-          button(type="submit") Submit
-      if leads
-        h1 Leads
-        for lead in leads 
-          p(id=`${lead.id}`) 
-            span #{lead.email}
-            |
-
-            |
-            a(href="/lead/" + lead.id ) Details
-            |
-
-            |
-            button(onclick=`deletelead('${lead.id}')`) Delete
+    include common/navBar.pug
+    +navBar()
+    .container
+      .row
+        .col-md-12
+          .card.mt-3
+            .card-body
+              h2.card-title Minimum Viable landing page
+              p.card-text
+              | Some quick example text to build on the card title and make up the bulk of the card's content.
+              form(action="/", method="POST")
+                label(for='exampleInputEmail1') Email address
+                .form-inline
+                  input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', name="lead_email",placeholder="Enter your E-mail")
+                  |
+                  button.btn.btn-primary(type='submit') Submit
+      .row.mb-4
+        .col-md-12
+          if leads
+            .card.mt-3
+                .card-body
+                    h2.card-title Leads
+                    table.table
+                      thead
+                        tr
+                          th(scope='col') E-mail
+                          th(scope='col', colspan='2') Action
+                      tbody
+                        for lead in leads
+                          tr(id=`${lead.id}`)
+                            th(scope='row') #{lead.email}
+                            td
+                              a.card-link(href="/lead/" + lead.id ) Details
+                            td
+                              button.btn.btn-primary(onclick=`deletelead('${lead.id}')`) Delete
     include common/footer.pug
     +footer()
     script(src="/javascripts/lead.js")
