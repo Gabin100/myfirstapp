@@ -1,7 +1,7 @@
 const models = require('../models');
 
 exports.get_landing = function(req, res, next) {
-    res.render('landing', { title: 'Express' });
+    res.render('landing', { title: 'Email' });
   };
 
   exports.submit_lead = function(req, res, next) {
@@ -14,7 +14,7 @@ exports.get_landing = function(req, res, next) {
 
   exports.show_leads = function(req, res, next) {
     models.lead.findAll().then(leads => {
-      res.render('landing', { title: 'Express' , leads: leads});
+      res.render('lead/leads', { title: 'Leads' , leads: leads});
     })
     
   };
@@ -25,8 +25,8 @@ exports.get_landing = function(req, res, next) {
         id: req.params.lead_id
       }
     }).then(lead => {
-      res.render('lead', {
-        title: 'Express' , lead: lead
+      res.render('lead/lead', {
+        title: 'Lead' , lead: lead
       });
     })
     
@@ -38,7 +38,7 @@ exports.get_landing = function(req, res, next) {
       }
     }).then(lead => {
       res.render('lead/edit_lead', {
-        title: 'Express' , lead: lead
+        title: 'Edit Lead' , lead: lead
       });
     })
     

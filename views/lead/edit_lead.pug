@@ -3,10 +3,19 @@ html(lang='en')
   include ../common/head.pug 
   +head(`${title}`)
   body
-    block content
-      h1 Update
-        form(action="/lead/" + lead.id + "/edit", method="POST")
-          input(type="email", name="lead_email",placeholder="Enter your E-mail", value=lead.email)
-          button(type="submit") Save
+    include ../common/navBar.pug
+    +navBar()
+    .container
+      .row
+        .col-md-12
+          .card.mt-3
+            .card-body
+              h2.card-title UPDATE LEAD
+              form(action="/lead/" + lead.id + "/edit", method="POST")
+                label(for='exampleInputEmail1') Update Email address
+                .form-inline
+                  input#exampleInputEmail1.form-control(type='email', value=lead.email, aria-describedby='emailHelp', name="lead_email",placeholder="Enter your E-mail")
+                  |
+                  button.btn.btn-primary(type='submit') Save
     include ../common/footer.pug
     +footer()

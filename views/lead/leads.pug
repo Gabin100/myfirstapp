@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+  include ../common/head.pug 
+  +head(`${title}`)
+  body
+    include ../common/navBar.pug
+    +navBar()
+    .container
+      .row.mb-4
+        .col-md-12
+            .card.mt-3
+                .card-body
+                    h2.card-title Leads
+                    table.table
+                      thead
+                        tr
+                          th(scope='col') E-mail
+                          th(scope='col', colspan='2') Action
+                      tbody
+                        for lead in leads
+                          tr(id=`${lead.id}`)
+                            th(scope='row') #{lead.email}
+                            td
+                              a.card-link(href="/lead/" + lead.id ) Details
+                            td
+                              button.btn.btn-primary(onclick=`deletelead('${lead.id}')`) Delete
+    include ../common/footer.pug
+    +footer()
+    script(src="/javascripts/lead.js")

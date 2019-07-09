@@ -19,25 +19,5 @@ html(lang='en')
                   input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', name="lead_email",placeholder="Enter your E-mail")
                   |
                   button.btn.btn-primary(type='submit') Submit
-      .row.mb-4
-        .col-md-12
-          if leads
-            .card.mt-3
-                .card-body
-                    h2.card-title Leads
-                    table.table
-                      thead
-                        tr
-                          th(scope='col') E-mail
-                          th(scope='col', colspan='2') Action
-                      tbody
-                        for lead in leads
-                          tr(id=`${lead.id}`)
-                            th(scope='row') #{lead.email}
-                            td
-                              a.card-link(href="/lead/" + lead.id ) Details
-                            td
-                              button.btn.btn-primary(onclick=`deletelead('${lead.id}')`) Delete
     include common/footer.pug
     +footer()
-    script(src="/javascripts/lead.js")
