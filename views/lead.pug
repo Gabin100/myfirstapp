@@ -1,12 +1,17 @@
-extends layout
-
-block content
-  h1 Lead
-  p 
-    span #{lead.email}
-    |
-    em 
-    a(href="/lead/" + lead.id + "/edit") Edit
-    |
-    form(action="/lead/" + lead.id + "/delete", method="post")
-      button(type="submit") Delete
+doctype html
+html(lang='en')
+  include common/head.pug 
+  +head(`${title}`)
+  body
+    block content
+      h1 Lead
+      p 
+        span #{lead.email}
+        |
+        em 
+        a(href="/lead/" + lead.id + "/edit") Edit
+        |
+        form(action="/lead/" + lead.id + "/delete", method="post")
+          button(type="submit") Delete
+    include common/footer.pug
+    +footer()
