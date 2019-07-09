@@ -26,7 +26,7 @@ exports.get_landing = function(req, res, next) {
       }
     }).then(lead => {
       res.render('lead', {
-        lead: lead
+        title: 'Express' , lead: lead
       });
     })
     
@@ -38,7 +38,7 @@ exports.get_landing = function(req, res, next) {
       }
     }).then(lead => {
       res.render('lead/edit_lead', {
-        lead: lead
+        title: 'Express' , lead: lead
       });
     })
     
