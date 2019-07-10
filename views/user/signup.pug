@@ -14,11 +14,15 @@ html(lang='en')
                     form(action='/signup', method='POST')
                         .form-group
                             label(for='Email1') Email address
-                            input#Email1.form-control(type='email', name='Email1', aria-describedby='emailHelp', placeholder='Enter email')
+                            input#Email1.form-control(type='email', name='Email1', aria-describedby='emailHelp', placeholder='Enter email', value= formData.Email1)
                             small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
+                            if  (errors && errors.Email1)
+                                small.text-danger.form-text #{errors.Email1}
                         .form-group
                             label(for='Password1') Password
                             input#Password1.form-control(type='password', name='Password1', placeholder='Password')
+                            if  (errors && errors.Password1)
+                                small.text-danger.form-text #{errors.Password1}
                         button.btn.btn-primary(type='submit') Sign Up
                     p.mt-2.mb-0
                         | Already have an account #[a(href='/login') Log in Here]
