@@ -34,7 +34,6 @@ exports.login = function(req, res, next){
 exports.signup = function(req, res, next){
     let errors = {};
     return validatUser(errors, req).then(errors => {
-        console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
         if(!isEmpty(errors)){
             rerender_signup(errors, req, res, next);
         }else{
