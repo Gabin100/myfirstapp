@@ -20,6 +20,10 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.STRING
             },
+            username: {
+                allowNull: true,
+                type: Sequelize.STRING
+            },
             firstname: {
                 allowNull: true,
                 type: Sequelize.STRING

@@ -1,7 +1,7 @@
 let models = require('../models');
 let bcrypt = require('bcrypt');
 const passport = require('passport');
-//const myPassport = require('../passport_setup');
+const myPassport = require('../passport_setup');
 
 let flash = require('connect-flash');
 
