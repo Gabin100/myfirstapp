@@ -13,19 +13,18 @@ html(lang='en')
                     h2.card-title Login
                     form(action='/login', method='POST')
                         .form-group
-                            label(for='exampleInputEmail1') Email address
-                            input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email')
+                            label(for='Email1') Email address
+                            input#Email1.form-control(type='email', name='Email1', aria-describedby='emailHelp', placeholder='Enter email')
                             small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
                         .form-group
-                            label(for='exampleInputPassword1') Password
-                            input#exampleInputPassword1.form-control(type='password', placeholder='Password')
+                            label(for='Password1') Password
+                            input#Password1.form-control(type='password', name='Password1', placeholder='Password')
                         .form-check
                             input#exampleCheck1.form-check-input(type='checkbox')
                             label.form-check-label(for='exampleCheck1') Check me out
                         button.btn.btn-primary(type='submit') Submit
                     p.mt-2.mb-0
                         | have No account #[a(href='/signup') Sign up Here]
-                        .
             
     include ../common/footer.pug
     +footer()
