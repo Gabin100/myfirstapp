@@ -15,7 +15,7 @@ exports.show_login = function(req, res, next){
     res.render('user/login', {title: 'Login', formData: {}, errors: {}});
 }
 const rerender_signup = function(errors, req, res, next){
-    res.render('user/login', {title: 'Signup', formData: req.body, errors: errors});
+    res.render('user/signup', {title: 'Signup', formData: req.body, errors: errors});
 }
 
 exports.show_signup = function(req, res, next){
