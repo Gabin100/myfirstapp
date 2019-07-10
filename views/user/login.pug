@@ -1,0 +1,31 @@
+doctype html
+html(lang='en')
+  include ../common/head.pug 
+  +head(`${title}`)
+  body
+    include ../common/navBar.pug
+    +navBar()
+    .container
+      .row.mb-4
+        .col-md-12
+            .card.mt-3
+                .card-body
+                    h2.card-title Login
+                    form(action='/login', method='POST')
+                        .form-group
+                            label(for='exampleInputEmail1') Email address
+                            input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email')
+                            small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
+                        .form-group
+                            label(for='exampleInputPassword1') Password
+                            input#exampleInputPassword1.form-control(type='password', placeholder='Password')
+                        .form-check
+                            input#exampleCheck1.form-check-input(type='checkbox')
+                            label.form-check-label(for='exampleCheck1') Check me out
+                        button.btn.btn-primary(type='submit') Submit
+                    p.mt-2.mb-0
+                        | have No account #[a(href='/signup') Sign up Here]
+                        .
+            
+    include ../common/footer.pug
+    +footer()
