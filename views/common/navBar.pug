@@ -1,6 +1,8 @@
-mixin navBar()
+mixin navBar(user)
     nav.navbar.navbar-expand-lg.navbar-light.bg-light
-        a.navbar-brand(href='#') Navbar
+        a.navbar-brand(href='/') 
+            if user
+                span #{user.email}!
         button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
             span.navbar-toggler-icon
         div#navbarNav.collapse.navbar-collapse
@@ -12,6 +14,8 @@ mixin navBar()
                 li.nav-item
                     a.nav-link(href='/leads') Leads
                 li.nav-item
-                    a.nav-link(href='#') Pricing
+                    a.nav-link(href='/login') Login
                 li.nav-item
-                    a.nav-link(href='#') Disabled
+                    a.nav-link(href='/signup') Sign up
+                li.nav-item
+                    a.nav-link(href='/logout') Logout
