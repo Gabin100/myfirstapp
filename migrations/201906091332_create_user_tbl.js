@@ -26,7 +26,7 @@ module.exports = {
             },lastname: {
                 allowNull: true,
                 type: Sequelize.STRING
-            },passsword: {
+            },password: {
                 allowNull: false,
                 type: Sequelize.STRING
             }
