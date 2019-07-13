@@ -27,6 +27,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true
+        },
+        is_amin: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            unique: true
         }
     });
     return User;
